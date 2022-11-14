@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<script >
+	var Constr = (function () {
+    var instance;
+    function createInstance(arg) {
+        var object = {title: arg};
+        return object;
+    };
+    return {
+        getInstance: function (arg) {
+            if (!instance) {
+                instance = createInstance(arg);
+            }
+            return instance;
+        }
+    };
+})();
+var tt = "tt";
+var nn = "nn";
+var instance1 = Constr.getInstance(tt);
+var instance2 = Constr.getInstance("nn");
+console.log(instance1);
+console.log(instance2);
+</script>
+</script>
+</body>
+</html>
